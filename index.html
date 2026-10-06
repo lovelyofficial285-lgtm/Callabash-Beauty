@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callabash Beauty | Beauty Parlour in Peckham, London</title>
+  <meta name="description" content="Callabash Beauty in Peckham, London — safe, skin-loving facials and body treatments. Rated 4.9 on Google (18 reviews). Book online or call +44 7488 384343.">
+  <meta name="theme-color" content="#5A2E3A">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+  :root{
+    --cream:#FBF6F1; --sand:#F0E1D6; --sand-soft:#F6ECE3;
+    --gold:#B88A4A; --gold-soft:#D4B27C;
+    --plum:#5A2E3A; --plum-dark:#431F29; --rose:#C98B8B;
+    --charcoal:#2E2A2B; --text-soft:#716569;
+    --radius-sm:12px; --radius-md:16px; --radius-lg:20px;
+    --shadow-sm:0 3px 14px rgba(90,46,58,.10);
+    --shadow-md:0 16px 38px rgba(90,46,58,.18);
+    --font-head:'Playfair Display',Georgia,serif;
+    --font-body:'Nunito Sans','Segoe UI',Arial,sans-serif;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--font-body);color:var(--charcoal);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:var(--font-head);color:var(--plum);font-weight:500;}
+  a{text-decoration:none;}
+  ::selection{background:var(--gold);color:#fff;}
+  section{scroll-margin-top:84px;}
+
+  .label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.30em;text-transform:uppercase;color:var(--gold);}
+  .label.on-dark{color:var(--gold-soft);}
+  .h-display{font-size:clamp(2.3rem,7vw,4rem);line-height:1.12;font-weight:500;}
+  .h-section{font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.15;}
+  .lead-copy{font-size:1rem;line-height:1.95;color:var(--text-soft);}
+  .rule{width:52px;height:2px;background:var(--gold);border:0;opacity:1;}
+
+  .btn-main{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.85rem;letter-spacing:.08em;background:var(--plum);color:var(--cream);padding:.95rem 2.1rem;border-radius:300px;border:1px solid var(--plum);transition:all .35s ease;}
+  .btn-main svg,.btn-ghost svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .btn-main:hover{background:var(--plum-dark);color:var(--cream);transform:translateY(-2px);box-shadow:0 10px 22px rgba(90,46,58,.25);}
+  .btn-ghost{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.85rem;letter-spacing:.08em;background:transparent;color:var(--plum);padding:.95rem 2.1rem;border-radius:300px;border:1.5px solid var(--plum);transition:all .35s ease;}
+  .btn-ghost:hover{background:var(--plum);color:var(--cream);transform:translateY(-2px);}
+  .btn-ghost.light{color:var(--cream);border-color:rgba(251,246,241,.8);}
+  .btn-ghost.light:hover{background:var(--cream);color:var(--plum);}
+  .link-main{font-weight:700;font-size:.85rem;letter-spacing:.06em;color:var(--plum);display:inline-flex;align-items:center;gap:.4rem;transition:color .3s ease,gap .3s ease;}
+  .link-main:hover{color:var(--gold);gap:.7rem;}
+  .link-main svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;}
+
+  /* NAV */
+  .navbar-main{position:fixed;top:0;left:0;right:0;z-index:1030;padding:1.05rem 0;transition:background .4s,padding .4s,box-shadow .4s;}
+  .navbar-main .brand{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-head);font-size:1.28rem;font-weight:600;color:var(--plum);letter-spacing:.02em;}
+  .navbar-main .brand svg{width:26px;height:26px;stroke:var(--gold);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .navbar-main .nav-link{font-weight:700;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);margin:0 .3rem;padding:.6rem .7rem !important;transition:color .3s;}
+  .navbar-main .nav-link:hover{color:var(--gold);}
+  .navbar-main .nav-book{font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);background:var(--plum);border-radius:300px;padding:.6rem 1.5rem;margin-left:.8rem;white-space:nowrap;transition:all .3s;}
+  .navbar-main .nav-book:hover{background:var(--gold);color:#fff;}
+  .navbar-main .navbar-toggler{border:1px solid rgba(90,46,58,.35);border-radius:12px;padding:.45rem .6rem;}
+  .navbar-main .navbar-toggler:focus{box-shadow:0 0 0 3px rgba(184,138,74,.3);}
+  .toggler-bar{display:block;width:20px;height:2px;background:var(--plum);border-radius:2px;}
+  .toggler-bar+.toggler-bar{margin-top:5px;}
+  .navbar-main.scrolled{background:rgba(251,246,241,.97);backdrop-filter:blur(8px);padding:.65rem 0;box-shadow:var(--shadow-sm);}
+  @media (max-width:991.98px){
+    .navbar-main{background:rgba(251,246,241,.97);box-shadow:var(--shadow-sm);}
+    .navbar-main .navbar-collapse{background:var(--cream);margin-top:.9rem;border-radius:var(--radius-md);border:1px solid var(--sand);box-shadow:var(--shadow-md);padding:1.2rem 1.1rem 1.5rem;text-align:center;}
+    .navbar-main .nav-book{margin:.7rem auto 0;display:inline-block;}
+  }
+
+  /* HERO */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;
+    background:
+      radial-gradient(circle at 85% 20%,rgba(212,178,124,.55),transparent 45%),
+      radial-gradient(circle at 10% 90%,rgba(201,139,139,.35),transparent 50%),
+      linear-gradient(135deg,#F6ECE3 0%,#EAD3C4 100%);}
+  .hero-leaf{position:absolute;right:-60px;bottom:-40px;width:min(520px,80vw);opacity:.16;stroke:var(--plum);fill:none;stroke-width:.6;}
+  .hero-content{position:relative;z-index:2;width:100%;padding:7rem 0 4.5rem;}
+  .hero .h-display{margin-bottom:1.1rem;}
+  .hero .subtext{font-size:1.02rem;color:var(--text-soft);line-height:1.85;max-width:500px;margin-bottom:2rem;}
+  .trust{display:inline-flex;align-items:center;gap:.55rem;background:rgba(255,255,255,.75);backdrop-filter:blur(6px);border:1px solid var(--sand);border-radius:300px;padding:.55rem 1.2rem;font-size:.85rem;font-weight:600;color:var(--plum);}
+  .trust .stars{color:var(--gold);letter-spacing:.08em;}
+
+  .section{padding:clamp(3.8rem,8vw,6.5rem) 0;}
+  .bg-sand{background:var(--sand-soft);}
+  .bg-plum{background:var(--plum);color:var(--cream);}
+  .bg-plum h2,.bg-plum h3{color:var(--cream);}
+  .bg-plum .lead-copy{color:rgba(251,246,241,.82);}
+
+  /* WHY */
+  .why-item{text-align:center;padding:1.8rem 1rem;}
+  .icon-ring{width:74px;height:74px;margin:0 auto 1.2rem;border-radius:50%;background:#fff;border:1px solid var(--sand);display:flex;align-items:center;justify-content:center;transition:transform .35s,border-color .35s;}
+  .why-item:hover .icon-ring{transform:translateY(-4px);border-color:var(--gold);}
+  .why-item svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+  .why-item h3{font-size:1.25rem;margin-bottom:.5rem;}
+  .why-item p{font-size:.92rem;color:var(--text-soft);line-height:1.8;margin:0;}
+
+  /* ABOUT */
+  .about-card{border-radius:200px 200px var(--radius-lg) var(--radius-lg);aspect-ratio:4/5;max-width:380px;margin:0 auto;position:relative;
+    background:linear-gradient(165deg,var(--plum) 0%,#7A4553 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:2rem;box-shadow:var(--shadow-md);}
+  .about-card::before{content:"";position:absolute;inset:0;transform:translate(14px,14px);border:2px solid var(--gold);border-radius:200px 200px var(--radius-lg) var(--radius-lg);z-index:-1;}
+  .about-card svg{width:56px;height:56px;stroke:var(--gold-soft);fill:none;stroke-width:1.2;margin-bottom:1rem;}
+  .about-card p{font-family:var(--font-head);font-style:italic;font-size:1.3rem;color:var(--cream);margin:0;line-height:1.5;}
+
+  /* SERVICES */
+  .svc-card{background:#fff;border-radius:var(--radius-lg);overflow:hidden;height:100%;border:1px solid rgba(240,225,214,.9);box-shadow:var(--shadow-sm);transition:transform .45s,box-shadow .45s;}
+  .svc-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-md);}
+  .svc-media{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--sand),#F7EBDF);}
+  .svc-media svg{width:46px;height:46px;stroke:var(--plum);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .6s;}
+  .svc-card:hover .svc-media svg{transform:scale(1.15) rotate(-4deg);}
+  .svc-body{padding:1.5rem 1.5rem 1.6rem;}
+  .svc-body h3{font-size:1.3rem;margin-bottom:.45rem;}
+  .svc-body p{font-size:.92rem;color:var(--text-soft);line-height:1.75;margin-bottom:1rem;}
+  .svc-note{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft);}
+
+  /* REVIEWS */
+  .review-card{background:var(--sand);border-radius:var(--radius-lg);padding:2.2rem 2rem;height:100%;margin:0;transition:transform .4s,box-shadow .4s;}
+  .review-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+  .review-card .stars{color:var(--gold);font-size:1rem;letter-spacing:.18em;}
+  .review-card blockquote{font-family:var(--font-head);font-size:1.22rem;font-style:italic;line-height:1.6;color:var(--plum);margin:1rem 0 1.2rem;}
+  .review-card figcaption{font-size:.74rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-soft);}
+  .rating-line{font-size:.88rem;font-weight:700;color:var(--text-soft);letter-spacing:.06em;}
+  .rating-line b{color:var(--plum);}
+
+  /* PHILOSOPHY */
+  .quote-big{font-family:var(--font-head);font-style:italic;font-size:clamp(1.4rem,3.2vw,2rem);line-height:1.6;color:var(--cream);}
+
+  /* CONTACT */
+  .info-line{display:flex;gap:.9rem;align-items:flex-start;padding:.85rem 0;border-bottom:1px solid var(--sand);}
+  .info-line svg{width:19px;height:19px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto;margin-top:.15rem;}
+  .info-line a{color:var(--plum);font-weight:700;transition:color .3s;}
+  .info-line a:hover{color:var(--gold);}
+  .map-frame{width:100%;height:320px;border:0;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);filter:saturate(.8) sepia(.08);}
+
+  footer{background:var(--plum-dark);color:rgba(251,246,241,.8);}
+  footer .brand{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-head);font-size:1.25rem;font-weight:600;color:var(--cream);}
+  footer .brand svg{width:24px;height:24px;stroke:var(--gold-soft);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  footer a{color:rgba(251,246,241,.8);transition:color .3s;}
+  footer a:hover{color:var(--gold-soft);}
+  footer .fine{font-size:.8rem;}
+  footer hr{border-color:rgba(251,246,241,.15);opacity:1;}
+
+  .fab-wa{position:fixed;right:1.1rem;bottom:1.2rem;z-index:1029;width:56px;height:56px;border-radius:50%;background:var(--plum);color:var(--cream);display:none;align-items:center;justify-content:center;box-shadow:0 12px 26px rgba(90,46,58,.4);transition:transform .3s,background .3s;}
+  .fab-wa svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .fab-wa:hover{background:var(--gold);transform:scale(1.06);}
+  @media (max-width:767.98px){.fab-wa{display:flex;}}
+
+  .fade-up{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1);}
+  .fade-up.in-view{opacity:1;transform:none;}
+  .d-1{transition-delay:.1s;} .d-2{transition-delay:.2s;} .d-3{transition-delay:.3s;}
+  @media (prefers-reduced-motion:reduce){.fade-up{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+  </style>
+</head>
+
+<body>
+<!-- Links: Book = Treatwell | Call/WhatsApp = +44 7488 384343 -->
+
+<nav class="navbar navbar-expand-lg navbar-main" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand brand" href="#top">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c0-6 1-11 8-16-1 7-3 12-8 16Z"/><path d="M12 21C12 15 11 10 4 5c1 7 3 12 8 16Z"/></svg>
+      Callabash&nbsp;Beauty
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="toggler-bar"></span><span class="toggler-bar"></span><span class="toggler-bar"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Treatments</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-book" href="https://www.treatwell.co.uk/place/callabash-beauty-1/" target="_blank" rel="noopener">Book Online</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <svg class="hero-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c0-6 1-11 8-16-1 7-3 12-8 16Z"/><path d="M12 21C12 15 11 10 4 5c1 7 3 12 8 16Z"/></svg>
+  <div class="container hero-content">
+    <p class="label fade-up">Beauty Parlour · Peckham, London</p>
+    <h1 class="h-display fade-up d-1">Discover the beauty<br class="d-none d-md-block"> you already have.</h1>
+    <p class="subtext fade-up d-2">Safe, skin-loving facials and body treatments in the heart of Peckham. A little more me time — and your skin will thank you.</p>
+    <div class="d-flex flex-column flex-sm-row gap-3 mb-4 fade-up d-2">
+      <a href="https://www.treatwell.co.uk/place/callabash-beauty-1/" target="_blank" rel="noopener" class="btn-main">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Book Online
+      </a>
+      <a href="#services" class="btn-ghost">See Treatments</a>
+    </div>
+    <div class="fade-up d-3"><span class="trust"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 · 18 Google reviews</span></div>
+  </div>
+</header>
+
+<!-- WHY -->
+<section class="section pb-4" aria-label="Why Callabash Beauty">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-12 col-md-4 fade-up">
+        <div class="why-item">
+          <div class="icon-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 6.6L21 9l-5 4.5L17.5 21 12 17.3 6.5 21 8 13.5 3 9l6.6-.4Z"/></svg></div>
+          <h3>Matched to your skin</h3>
+          <p>Plenty of options, and honest guidance to choose what suits your skin.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 fade-up d-1">
+        <div class="why-item">
+          <div class="icon-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <h3>Always on time</h3>
+          <p>Reliable, professional and respectful of your time — every visit.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 fade-up d-2">
+        <div class="why-item">
+          <div class="icon-ring"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c0-6 1-11 8-16-1 7-3 12-8 16Z"/><path d="M12 21C12 15 11 10 4 5c1 7 3 12 8 16Z"/></svg></div>
+          <h3>Safe &amp; beneficial</h3>
+          <p>Body treatments chosen to be gentle, beneficial and great on the skin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 fade-up">
+        <div class="about-card">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c0-6 1-11 8-16-1 7-3 12-8 16Z"/><path d="M12 21C12 15 11 10 4 5c1 7 3 12 8 16Z"/></svg>
+          <p>“Feed your skin and your skin will thank you.”</p>
+        </div>
+      </div>
+      <div class="col-lg-7 fade-up d-1">
+        <p class="label">About Callabash</p>
+        <h2 class="h-section mt-2 mb-3">Your hidden beauty, brought out.</h2>
+        <hr class="rule my-4">
+        <p class="lead-copy">Callabash Beauty is all about helping people discover the beauty within. We are all born beautiful — a little more me time and a touch of adventure makes you who you are.</p>
+        <p class="lead-copy">We use the best of body treatments that are safe, beneficial and great on the skin. Come as you are, tell us what you'd love, and we'll help you choose what matches your skin.</p>
+        <a href="https://www.treatwell.co.uk/place/callabash-beauty-1/" target="_blank" rel="noopener" class="btn-main mt-3">Book Your Treatment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-sand" id="services">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <p class="label">Treatments</p>
+      <h2 class="h-section mt-2">Treatments for face &amp; body</h2>
+      <hr class="rule mx-auto mt-4">
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 fade-up">
+        <article class="svc-card">
+          <div class="svc-media"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div>
+          <div class="svc-body"><h3>Facials</h3><p>Deep-cleansing, nourishing facials tailored to your skin type and goals.</p>
+            <a class="link-main" href="https://callabash-beauty.mytreatwell.co.uk/" target="_blank" rel="noopener">View &amp; book <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6 fade-up d-1">
+        <article class="svc-card">
+          <div class="svc-media"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c0-6 1-11 8-16-1 7-3 12-8 16Z"/><path d="M12 21C12 15 11 10 4 5c1 7 3 12 8 16Z"/></svg></div>
+          <div class="svc-body"><h3>Body Treatments</h3><p>Safe, beneficial treatments that leave your skin soft, glowing and cared for.</p>
+            <a class="link-main" href="https://callabash-beauty.mytreatwell.co.uk/" target="_blank" rel="noopener">View &amp; book <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6 fade-up d-2">
+        <article class="svc-card">
+          <div class="svc-media"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 6.6L21 9l-5 4.5L17.5 21 12 17.3 6.5 21 8 13.5 3 9l6.6-.4Z"/></svg></div>
+          <div class="svc-body"><h3>Skin Care</h3><p>Honest advice and the right treatment to match your skin, step by step.</p>
+            <a class="link-main" href="https://callabash-beauty.mytreatwell.co.uk/" target="_blank" rel="noopener">View &amp; book <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6 fade-up">
+        <article class="svc-card">
+          <div class="svc-media"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div class="svc-body"><h3>Brows &amp; Lashes</h3><p>Defined, polished finishing touches that frame your face.</p>
+            <a class="link-main" href="https://callabash-beauty.mytreatwell.co.uk/" target="_blank" rel="noopener">View &amp; book <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </article>
+      </div>
+      <div class="col-lg-4 col-md-6 fade-up d-1">
+        <article class="svc-card">
+          <div class="svc-media"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 8c3 0 7 2 7 6M19 8c-3 0-7 2-7 6"/></svg></div>
+          <div class="svc-body"><h3>Waxing</h3><p>Quick, clean and comfortable hair removal for smooth, soft skin.</p>
+            <a class="link-main" href="https://callabash-beauty.mytreatwell.co.uk/" target="_blank" rel="noopener">View &amp; book <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </article>
+      </div>
+      <!-- CTA tile -->
+      <div class="col-lg-4 col-md-6 fade-up d-2">
+        <div class="h-100 d-flex flex-column justify-content-center align-items-center text-center p-4" style="border:1.5px dashed var(--gold);border-radius:var(--radius-lg);">
+          <h3 style="font-size:1.25rem;">Not sure what you need?</h3>
+          <p class="mb-4" style="font-size:.92rem;color:var(--text-soft);line-height:1.75;">Message us — we'll help you choose what matches your skin.</p>
+          <a href="https://wa.me/447488384343?text=Hi%20Callabash%20Beauty%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn-ghost" style="padding:.75rem 1.8rem;">Ask on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center svc-note mt-5 mb-0 fade-up">Full menu &amp; prices on Treatwell.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="text-center mb-5 fade-up">
+      <p class="label">Reviews</p>
+      <h2 class="h-section mt-2 mb-3">Kind words from clients</h2>
+      <p class="rating-line"><b>★ 4.9</b> on Google · 18 reviews</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 fade-up">
+        <figure class="review-card"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"I had a great time and treatment was worth the money."</blockquote><figcaption>— Google review</figcaption></figure>
+      </div>
+      <div class="col-md-4 fade-up d-1">
+        <figure class="review-card"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"I had so many options and you helped me make choices that match my skin."</blockquote><figcaption>— Google review</figcaption></figure>
+      </div>
+      <div class="col-md-4 fade-up d-2">
+        <figure class="review-card"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>"They are always on time and very talented professionals all round."</blockquote><figcaption>— Google review</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section bg-plum">
+  <div class="container text-center fade-up" style="max-width:820px;">
+    <p class="label on-dark">Our Philosophy</p>
+    <hr class="rule mx-auto my-4">
+    <p class="quote-big mb-4">We are all born beautiful. A little more me time and an adventurous you makes you who you are.</p>
+    <a href="https://www.treatwell.co.uk/place/callabash-beauty-1/" target="_blank" rel="noopener" class="btn-ghost light">Take your me time</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-6 fade-up">
+        <p class="label">Book &amp; Visit</p>
+        <h2 class="h-section mt-2 mb-3">Book your appointment</h2>
+        <hr class="rule my-4">
+        <p class="lead-copy">Book instantly online, or call or message us and we'll find a time that suits you.</p>
+        <div class="d-flex flex-column flex-sm-row flex-wrap gap-3 my-4">
+          <a href="https://www.treatwell.co.uk/place/callabash-beauty-1/" target="_blank" rel="noopener" class="btn-main justify-content-center">Book Online</a>
+          <a href="https://wa.me/447488384343?text=Hi%20Callabash%20Beauty%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="btn-ghost justify-content-center">WhatsApp</a>
+          <a href="tel:+447488384343" class="btn-ghost justify-content-center">Call</a>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span><a href="https://maps.google.com/?q=5+Peckham+High+St,+London+SE15+5EB" target="_blank" rel="noopener">5 Peckham High St, London SE15 5EB</a></span>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span>Open until 8:00 pm</span>
+        </div>
+        <div class="info-line">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+447488384343">+44 7488 384343</a>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up d-1">
+        <iframe class="map-frame" src="https://www.google.com/maps?q=5+Peckham+High+St,+London+SE15+5EB,+United+Kingdom&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Callabash Beauty, 5 Peckham High St, London"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-4">
+        <a class="navbar-brand brand" href="#top">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c0-6 1-11 8-16-1 7-3 12-8 16Z"/><path d="M12 21C12 15 11 10 4 5c1 7 3 12 8 16Z"/></svg>
+          Callabash&nbsp;Beauty
+        </a>
+        <p class="fine mt-3 mb-0">Discover your hidden beauty.<br>Peckham, London.</p>
+      </div>
+      <div class="col-lg-4">
+        <p class="fine mb-1"><a href="https://maps.google.com/?q=5+Peckham+High+St,+London+SE15+5EB" target="_blank" rel="noopener">5 Peckham High St, London SE15 5EB</a></p>
+        <p class="fine mb-0"><a href="tel:+447488384343">+44 7488 384343</a></p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href="https://www.treatwell.co.uk/place/callabash-beauty-1/" target="_blank" rel="noopener" class="link-main" style="color:var(--gold-soft);">
+          Book on Treatwell <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="d-flex flex-column flex-md-row justify-content-between gap-2">
+      <p class="fine mb-0">© <span id="year">2026</span> Callabash Beauty. All rights reserved.</p>
+      <p class="fine mb-0" style="color:rgba(251,246,241,.5);">Peckham · London · UK</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/447488384343?text=Hi%20Callabash%20Beauty%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" class="fab-wa" aria-label="Message on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var nav=document.getElementById("mainNav");
+  function onScroll(){nav.classList.toggle("scrolled",window.scrollY>40);}
+  window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+  var menu=document.getElementById("navMenu");
+  menu.querySelectorAll("a").forEach(function(l){
+    l.addEventListener("click",function(){
+      if(menu.classList.contains("show")){bootstrap.Collapse.getOrCreateInstance(menu).hide();}
+    });
+  });
+
+  var els=document.querySelectorAll(".fade-up");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in-view");io.unobserve(en.target);}});
+    },{threshold:0.12,rootMargin:"0px 0px -40px 0px"});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add("in-view");});}
+
+  document.getElementById("year").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
